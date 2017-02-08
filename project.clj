@@ -4,11 +4,19 @@
                  [karma-reporter "2.1.1"]]
   :source-paths ["src/clj"]
   :plugins [[lein-cljsbuild "1.1.5"]]
+
   :cljsbuild
   {:builds {:test {:source-paths ["src/cljs" "test/cljs"]
-                   :compiler {:output-to "target/test_suite.js"
+                   ;; :notify-command makes lein-cljsbuild run the tests after
+                   ;; the build is done.
+                   :notify-command ["./trigger-karma.sh"]
+                   :compiler {:output-to "target/out/test_suite.js"
+                              :output-dir "target/out"
                               :main karma-demo.runner
-                              :optimizations :advanced
                               :parallel-build :true
-                              :pretty-print false}
-                   :notify-command ["./trigger-karma.sh"]}}})
+                              ;; Karma's web server serves the assets under
+                              ;; /base/, so that's our :asset-path.
+                              :asset-path "base"
+                              ;; :none works too!
+                              :optimizations :advanced
+                              :pretty-print false}}}})
