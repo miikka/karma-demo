@@ -52,7 +52,7 @@ parts.
 We do not use Karma's autowatch feature, because it tends to re-run the tests
 while cljsbuild is still compiling them. Instead we set cljsbuild's
 `:notify-command` to trigger the tests when the build is ready. I've tried to
-play with `autoWatchBatchDelay` option, but it's hard to get right.
+play with `autoWatchBatchDelay` option, but it's hard to get right. [There's a patch to make it work more nicely](https://github.com/karma-runner/karma/issues/2331), but it has not been released yet (as of 2017-06-13).
 
 [karma]: http://karma-runner.github.io/
 [doo]: https://github.com/bensu/doo
