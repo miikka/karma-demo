@@ -28,7 +28,7 @@ In another terminal, start cljsbuild:
 
 Now go and edit some of the `.cljs` files. The tests should be automatically
 run. You can also manually start a test run with `./trigger-karma.sh`. The JUnit
-files are under `target/reports`.
+files are under `target/out/reports`.
 
 
 ## How does this work?
