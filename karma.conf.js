@@ -10,8 +10,8 @@ module.exports = function(config) {
             // We serve all the JS files via Karma's webserver so that you can
             // use :optimizations :none. Only test_suite.js is included because
             // CLJS does its own module loading.
-            { pattern: '**/*.js', included: false, served: true },
-            'test_suite.js'
+            'test_suite.js',
+            { pattern: '**/*.js', included: false, served: true }
         ],
 
         client: {
@@ -32,9 +32,11 @@ module.exports = function(config) {
         autoWatch: false,
 
         // Configuration for JUnit output. We care only about the output directory.
+        // This directory is relative to basePath, so the XML files will be 
+        // in `target/out/reports`.
         // <https://github.com/karma-runner/karma-junit-reporter#configuration>
         junitReporter: {
-            outputDir: 'target/reports'
+            outputDir: 'reports'
         }
     });
 }
