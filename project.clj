@@ -1,7 +1,7 @@
 (defproject karma-demo "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.9.0-alpha14"]
-                 [org.clojure/clojurescript "1.9.456"]
-                 [karma-reporter "2.1.1"]]
+  :dependencies [[org.clojure/clojure "1.10.1"]
+                 [org.clojure/clojurescript "1.10.773"]
+                 [karma-reporter "3.1.0"]]
   :source-paths ["src/clj"]
   :plugins [[lein-cljsbuild "1.1.5"]]
 
